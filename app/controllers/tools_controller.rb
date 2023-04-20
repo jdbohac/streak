@@ -3,8 +3,13 @@ class ToolsController < ApplicationController
     render json: Tool.all
   end
   
+  def show
+    tool = Tool.find(params[:id])
+    render json: tool
+  end
+  
   def create
-   tool = Tool.new(name: params[:name], qty: params[:qty])
+   tool = Tool.new(name: params[:name], qty: params[:qty], brand: params[:brand], link: params[:link])
     if tool.save
       render json: tool, status: :created
     else
