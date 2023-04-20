@@ -1,10 +1,15 @@
 class ToolsController < ApplicationController
   def index
-    render json: Tool.all
+    render json: Tool.includes(:consumables).all
+  end
+  
+  def show
+    tool = Tool.includes(:consumables).find(params[:id])
+    render json: tool.as_json(include: :consumables)
   end
   
   def create
-   tool = Tool.new(name: params[:name], qty: params[:qty])
+   tool = Tool.new(name: params[:name], qty: params[:qty], brand: params[:brand], link: params[:link])
     if tool.save
       render json: tool, status: :created
     else
