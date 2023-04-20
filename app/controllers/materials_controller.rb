@@ -27,16 +27,18 @@ class MaterialsController < ApplicationController
 
   # PATCH/PUT /materials/1
   def update
-    if @material.update(material_params)
-      render json: @material
+    material = Material.find(params[:id])
+    if material.update(metal: params[:metal], qty: params[:qty], dimension: params[:dimension], link: params[:link])
+      render json: material
     else
-      render json: @material.errors, status: :unprocessable_entity
+      render json: material.errors, status: :unprocessable_entity
     end
   end
 
   # DELETE /materials/1
   def destroy
-    @material.destroy
+    material = Material.find(params[:id])
+    material.destroy!
   end
 
   private
