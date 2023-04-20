@@ -1,10 +1,10 @@
 class ToolsController < ApplicationController
   def index
-    render json: Tool.all
+    render json: Tool.includes(:consumables).all
   end
   
   def show
-    tool = Tool.find(params[:id])
+    tool = Tool.includes(:consumables).find(params[:id])
     render json: tool
   end
   

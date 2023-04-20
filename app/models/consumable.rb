@@ -1,3 +1,3 @@
 class Consumable < ApplicationRecord
-    belongs_to :tools
+    belongs_to :tool
 end

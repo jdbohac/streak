@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_20_183429) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_20_203916) do
   create_table "consumables", force: :cascade do |t|
     t.string "name"
     t.string "qty"
@@ -18,8 +18,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_20_183429) do
     t.string "brand"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "tools_id"
-    t.index ["tools_id"], name: "index_consumables_on_tools_id"
+    t.integer "tool_id"
+    t.index ["tool_id"], name: "index_consumables_on_tool_id"
   end
 
   create_table "consumables_tools", id: false, force: :cascade do |t|
@@ -45,5 +45,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_20_183429) do
     t.string "brand"
   end
 
-  add_foreign_key "consumables", "tools", column: "tools_id"
+  add_foreign_key "consumables", "tools"
 end

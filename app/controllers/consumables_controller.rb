@@ -16,7 +16,7 @@ class ConsumablesController < ApplicationController
 
   # POST /consumables
   def create
-    consumable = Consumable.new(name: params[:name], qty: params[:qty], brand: params[:brand], link: params[:link], tools_id: params[:tools_id])
+    consumable = Consumable.new(name: params[:name], qty: params[:qty], brand: params[:brand], link: params[:link], tool_id: params[:tool_id])
     if consumable.save
       render json: consumable, status: :created
     else
@@ -27,7 +27,7 @@ class ConsumablesController < ApplicationController
   # PATCH/PUT /consumables/1
   def update
     consumable = Consumable.find(params[:id])
-    consumable.update(name: params[:name], qty: params[:qty], brand: params[:brand], link: params[:link], tools_id: params[:tools_id])
+    consumable.update(name: params[:name], qty: params[:qty], brand: params[:brand], link: params[:link], tool_id: params[:tool_id])
       if consumable.save
         render json: consumable, status: :created
       else
