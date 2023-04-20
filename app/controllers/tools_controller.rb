@@ -5,7 +5,7 @@ class ToolsController < ApplicationController
   
   def show
     tool = Tool.includes(:consumables).find(params[:id])
-    render json: tool
+    render json: tool.as_json(include: :consumables)
   end
   
   def create
