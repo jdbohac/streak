@@ -1,24 +1,10 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Calhoun Catalog Back-end repository
 
-Things you may want to cover:
+This repository contains the back-end files for the Calhoun Catalog API.
 
-* Ruby version
+This project was built using Ruby on Rails and a PostgreSQL database.
 
-* System dependencies
+It contains the data for tools and materials used in a small steel-works shop.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The deployed version of the app is [available here](http://calhouncatalog.herokuapp.com/)
